@@ -4,6 +4,7 @@ export const drawCircle = (context: CanvasRenderingContext2D, circle: Circle): v
     context.beginPath();
     context.arc(circle.offsetX, circle.offsetY, circle.radius, 0, Math.PI * 2);
     context.closePath();
-    context.fillStyle = circle.color;
-    context.fill();
+    context.strokeStyle = circle.color;
+    context.lineWidth = 4;
+    context.stroke();
 };

@@ -8,7 +8,7 @@ import { HeaderView } from './header-view';
 export const HomePageView = () => {
     return (
         <div style={{ height: '100%', width: '100%' }}>
-            <div className="loading"></div>
+        <div className="loading"></div>
             <BackgroundView />
             <HeaderView />
             <ArticleView />

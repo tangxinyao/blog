@@ -24,7 +24,7 @@ module.exports = {
 
             { test: /\.less$/, use: ["style-loader", "css-loader", "less-loader"] },
             
-            { test: /\.(png|jpg|gif)$/, use: [{ loader: 'url-loader', options: { limit: 8192 } }] },
+            { test: /\.(png|jpg|gif)$/, use: [{ loader: 'url-loader', options: { limit: 32768 } }] },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]

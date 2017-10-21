@@ -16,7 +16,7 @@ export const HeaderView = () => (
         </div>
         <div className="search-group">
             <input className="search-ipt" type="text" />
-            <span className="fa fa-search search-btn"></span>
+            <span className="search-btn fa fa-search"></span>
         </div>
     </header>
 );
