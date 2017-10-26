@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { HomePageView } from './homepage';
+import { DashboardView } from './dashboard';
 
 class App extends React.Component {
     public render() {
         return (
-            <HomePageView />
+            <DashboardView />
         );
     }
 }

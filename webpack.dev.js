@@ -2,7 +2,8 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        main: "./public/src/index.tsx"
+        main: "./public/src/homepage/index.tsx",
+        dashboard: "./public/src/dashboard/index.tsx"
     },
     output: {
         path: path.resolve(__dirname, "public"),

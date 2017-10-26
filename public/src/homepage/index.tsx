@@ -1,18 +1,14 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
-import { ArticleView } from './article-view';
-import { BackgroundView } from './background';
-import { FooterView } from './footer-view';
-import { HeaderView } from './header-view';
+import { HomePageView } from './homepage';
 
-export const HomePageView = () => {
-    return (
-        <div style={{ height: '100%', width: '100%' }}>
-        <div className="loading"></div>
-            <BackgroundView />
-            <HeaderView />
-            <ArticleView />
-            <FooterView />
-        </div >
-    );
-};
+class App extends React.Component {
+    public render() {
+        return (
+            <HomePageView />
+        );
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
