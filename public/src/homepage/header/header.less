@@ -1,0 +1,49 @@
+@import "../../variables.less";
+.loading {
+    background: @primary;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+}
+
+header {
+    height: 4rem;
+    width: 100%;
+    background-image: url(../images/bg.png);
+    background-repeat: repeat;
+    .banner {
+        float: left;
+        height: 2rem;
+        margin: 1rem;
+        cursor: pointer;
+        font-weight: bold; // background-color: rgba(255, 255, 255, 0.75);
+        &:hover {
+            .logo {
+                transform: translateY(-2rem)
+            }
+        }
+    }
+    .logo-box {
+        display: inline-block;
+        height: 2rem;
+        overflow: hidden;
+        vertical-align: middle;
+        width: 2rem;
+    }
+    .logo {
+        display: block;
+        height: 2rem;
+        transition: transform 0.3s;
+        width: 2rem;
+    }
+    .title {
+        color: @primary;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 0.25rem 1rem;
+        text-shadow: -2px 0 @shadow, 2px 0 @shadow, 0 -2px @shadow, 0 2px @shadow;
+        vertical-align: middle;
+    }
+    
+}

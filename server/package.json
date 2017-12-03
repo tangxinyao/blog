@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "tang xinyao",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-router": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.42",
+    "@types/koa-router": "^7.0.27",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-typescript": "^3.2.3",
+    "typescript": "^2.6.2"
+  },
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp"
+  }
+}

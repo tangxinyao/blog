@@ -9,8 +9,12 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "devDependencies": {
+    "@types/immutable": "^3.8.7",
+    "@types/koa": "^2.0.41",
     "@types/react": "^16.0.15",
     "@types/react-dom": "^16.0.2",
+    "@types/react-redux": "^5.0.14",
+    "@types/redux-actions": "^2.2.3",
     "awesome-typescript-loader": "^3.2.3",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.1",
@@ -25,7 +29,13 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "immutable": "^3.8.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-observable": "^0.17.0",
+    "rxjs": "^5.5.3"
   }
 }

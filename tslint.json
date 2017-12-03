@@ -10,8 +10,7 @@
             240
         ],
         "no-console": [
-            true,
-            "log"
+            false
         ],
         "quotemark": [
             true,

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import logoShadow = require('./images/logo-shadow.png');
-import logo = require('./images/logo.png');
+import logoShadow = require('../images/logo-shadow.png');
+import logo = require('../images/logo.png');
 
-import './header.less';
+import { Search } from '../search';
 
 export const HeaderView = () => (
     <header>
@@ -14,9 +14,6 @@ export const HeaderView = () => (
             </span>
             <span className="title">Shay</span>
         </div>
-        <div className="search-group">
-            <input className="search-ipt" type="text" />
-            <span className="search-btn fa fa-search"></span>
-        </div>
+        <Search />
     </header>
 );

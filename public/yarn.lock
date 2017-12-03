@@ -2,6 +2,79 @@
 # yarn lockfile v1
 
 
+"@types/accepts@*":
+  version "1.3.3"
+  resolved "http://registry.npm.taobao.org/@types/accepts/download/@types/accepts-1.3.3.tgz#6da8c6e3144566feec7ce2176828f1c47523f1ab"
+
+"@types/body-parser@*":
+  version "1.16.8"
+  resolved "http://registry.npm.taobao.org/@types/body-parser/download/@types/body-parser-1.16.8.tgz#687ec34140624a3bec2b1a8ea9268478ae8f3be3"
+  dependencies:
+    "@types/express" "*"
+    "@types/node" "*"
+
+"@types/connect@*":
+  version "3.4.31"
+  resolved "http://registry.npm.taobao.org/@types/connect/download/@types/connect-3.4.31.tgz#1f92d6b117ecc05076c49ecd024f7976e528bad9"
+  dependencies:
+    "@types/node" "*"
+
+"@types/cookies@*":
+  version "0.7.1"
+  resolved "http://registry.npm.taobao.org/@types/cookies/download/@types/cookies-0.7.1.tgz#f9f204bd6767d389eea3b87609e30c090c77a540"
+  dependencies:
+    "@types/connect" "*"
+    "@types/express" "*"
+    "@types/keygrip" "*"
+    "@types/node" "*"
+
+"@types/express-serve-static-core@*":
+  version "4.0.57"
+  resolved "http://registry.npm.taobao.org/@types/express-serve-static-core/download/@types/express-serve-static-core-4.0.57.tgz#3cd8ab4b11d5ecd70393bada7fc1c480491537dd"
+  dependencies:
+    "@types/node" "*"
+
+"@types/express@*":
+  version "4.0.39"
+  resolved "http://registry.npm.taobao.org/@types/express/download/@types/express-4.0.39.tgz#1441f21d52b33be8d4fa8a865c15a6a91cd0fa09"
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/serve-static" "*"
+
+"@types/http-assert@*":
+  version "1.2.2"
+  resolved "http://registry.npm.taobao.org/@types/http-assert/download/@types/http-assert-1.2.2.tgz#17dfe5a82184a8898935d96fe2eaedd37d22d9a4"
+
+"@types/immutable@^3.8.7":
+  version "3.8.7"
+  resolved "http://registry.npm.taobao.org/@types/immutable/download/@types/immutable-3.8.7.tgz#536d33d30f3f3d9a6d4642a219419fd82af633fb"
+  dependencies:
+    immutable "*"
+
+"@types/keygrip@*":
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/@types/keygrip/download/@types/keygrip-1.0.1.tgz#ff540462d2fb4d0a88441ceaf27d287b01c3d878"
+
+"@types/koa-compose@*":
+  version "3.2.2"
+  resolved "http://registry.npm.taobao.org/@types/koa-compose/download/@types/koa-compose-3.2.2.tgz#dc106e000bbf92a3ac900f756df47344887ee847"
+
+"@types/koa@^2.0.41":
+  version "2.0.41"
+  resolved "http://registry.npm.taobao.org/@types/koa/download/@types/koa-2.0.41.tgz#76647382a042d334608816382b576f6915898a2d"
+  dependencies:
+    "@types/accepts" "*"
+    "@types/cookies" "*"
+    "@types/http-assert" "*"
+    "@types/keygrip" "*"
+    "@types/koa-compose" "*"
+    "@types/node" "*"
+
+"@types/mime@*":
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/@types/mime/download/@types/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
+
 "@types/node@*":
   version "8.0.46"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-8.0.46.tgz#6e1766b2d0ed06631d5b5f87bb8e72c8dbb6888e"
@@ -13,9 +86,27 @@
     "@types/node" "*"
     "@types/react" "*"
 
+"@types/react-redux@^5.0.14":
+  version "5.0.14"
+  resolved "http://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-5.0.14.tgz#f3fc30dcbb2d20455a714f591cc27f77b4df09bb"
+  dependencies:
+    "@types/react" "*"
+    redux "^3.6.0"
+
 "@types/react@*", "@types/react@^16.0.15":
   version "16.0.15"
   resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.0.15.tgz#1b1eba408fc75735b3e53a83333c346eeeb0022b"
+
+"@types/redux-actions@^2.2.3":
+  version "2.2.3"
+  resolved "http://registry.npm.taobao.org/@types/redux-actions/download/@types/redux-actions-2.2.3.tgz#a11777808ec37ef7246f70bed770cab3510cf926"
+
+"@types/serve-static@*":
+  version "1.13.1"
+  resolved "http://registry.npm.taobao.org/@types/serve-static/download/@types/serve-static-1.13.1.tgz#1d2801fa635d274cd97d4ec07e26b21b44127492"
+  dependencies:
+    "@types/express-serve-static-core" "*"
+    "@types/mime" "*"
 
 abbrev@1:
   version "1.1.1"
@@ -1692,6 +1783,10 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "http://registry.npm.taobao.org/hoek/download/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
+hoist-non-react-statics@^2.2.1:
+  version "2.3.1"
+  resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
+
 hosted-git-info@^2.1.4:
   version "2.5.0"
   resolved "http://registry.npm.taobao.org/hosted-git-info/download/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
@@ -1780,6 +1875,10 @@ image-size@~0.5.0:
   version "0.5.5"
   resolved "http://registry.npm.taobao.org/image-size/download/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
 
+immutable@*, immutable@^3.8.2:
+  version "3.8.2"
+  resolved "http://registry.npm.taobao.org/immutable/download/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
+
 import-local@^0.1.1:
   version "0.1.1"
   resolved "http://registry.npm.taobao.org/import-local/download/import-local-0.1.1.tgz#b1179572aacdc11c6a91009fb430dbcab5f668a8"
@@ -1829,6 +1928,12 @@ internal-ip@1.2.0:
 interpret@^1.0.0:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/interpret/download/interpret-1.0.4.tgz#820cdd588b868ffb191a809506d6c9c8f212b1b0"
+
+invariant@^2.0.0, invariant@^2.2.1:
+  version "2.2.2"
+  resolved "http://registry.npm.taobao.org/invariant/download/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
+  dependencies:
+    loose-envify "^1.0.0"
 
 invert-kv@^1.0.0:
   version "1.0.0"
@@ -2230,6 +2335,10 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+lodash-es@^4.17.4, lodash-es@^4.2.0, lodash-es@^4.2.1:
+  version "4.17.4"
+  resolved "http://registry.npm.taobao.org/lodash-es/download/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
+
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "http://registry.npm.taobao.org/lodash.camelcase/download/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
@@ -2242,7 +2351,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "http://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4:
+lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3111,7 +3220,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.6.0:
   version "15.6.0"
   resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -3231,6 +3340,17 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-redux@^5.0.6:
+  version "5.0.6"
+  resolved "http://registry.npm.taobao.org/react-redux/download/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
+  dependencies:
+    hoist-non-react-statics "^2.2.1"
+    invariant "^2.0.0"
+    lodash "^4.2.0"
+    lodash-es "^4.2.0"
+    loose-envify "^1.1.0"
+    prop-types "^15.5.10"
+
 react@^16.0.0:
   version "16.0.0"
   resolved "http://registry.npm.taobao.org/react/download/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
@@ -3311,6 +3431,32 @@ reduce-function-call@^1.0.1:
   resolved "http://registry.npm.taobao.org/reduce-function-call/download/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
+
+reduce-reducers@^0.1.0:
+  version "0.1.2"
+  resolved "http://registry.npm.taobao.org/reduce-reducers/download/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
+
+redux-actions@^2.2.1:
+  version "2.2.1"
+  resolved "http://registry.npm.taobao.org/redux-actions/download/redux-actions-2.2.1.tgz#d64186b25649a13c05478547d7cd7537b892410d"
+  dependencies:
+    invariant "^2.2.1"
+    lodash "^4.13.1"
+    lodash-es "^4.17.4"
+    reduce-reducers "^0.1.0"
+
+redux-observable@^0.17.0:
+  version "0.17.0"
+  resolved "http://registry.npm.taobao.org/redux-observable/download/redux-observable-0.17.0.tgz#23e29e3f3c39204b7ed6a14b67a29e317c03106b"
+
+redux@^3.6.0, redux@^3.7.2:
+  version "3.7.2"
+  resolved "http://registry.npm.taobao.org/redux/download/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
+  dependencies:
+    lodash "^4.2.1"
+    lodash-es "^4.2.1"
+    loose-envify "^1.1.0"
+    symbol-observable "^1.0.3"
 
 regenerate@^1.2.1:
   version "1.3.3"
@@ -3435,6 +3581,12 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^2.0.0"
     inherits "^2.0.1"
+
+rxjs@^5.5.3:
+  version "5.5.3"
+  resolved "http://registry.npm.taobao.org/rxjs/download/rxjs-5.5.3.tgz#b62227e74b84f4e77bdf440e50b5ee01a1bc7dcd"
+  dependencies:
+    symbol-observable "^1.0.1"
 
 safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
@@ -3862,6 +4014,10 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
+
+symbol-observable@^1.0.1, symbol-observable@^1.0.3:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.1.0.tgz#5c68fd8d54115d9dfb72a84720549222e8db9b32"
 
 tapable@^0.2.5, tapable@^0.2.7:
   version "0.2.8"

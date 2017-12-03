@@ -1,0 +1,2 @@
+export const TRANSPORT_SEARCH = 'TRANSPORT_SEARCH';
+export const UPDATE_SEARCH = 'UPDATE_SEARCH ';
