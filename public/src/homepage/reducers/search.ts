@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import { Action } from 'redux-actions';
-import { TRANSPORT_SEARCH, UPDATE_SEARCH } from './constant';
+import { TRANSPORT_SEARCH, UPDATE_SEARCH } from '../constants/search';
 
 export function searchReducer(state = '', action: Action<string>) {
     switch (action.type) {

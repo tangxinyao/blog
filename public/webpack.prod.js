@@ -15,7 +15,8 @@ const commonsChunk = new webpack.optimize.CommonsChunkPlugin({
 module.exports = {
     entry: {
         main: "./src/homepage/index.tsx",
-        dashboard: "./src/dashboard/index.tsx"
+        dashboard: "./src/dashboard/index.tsx",
+        passport: "./src/passport/index.tsx"
     },
     output: {
         path: __dirname,
