@@ -6,12 +6,6 @@ const extractLess = new ExtractTextPlugin({
     filename: "dist/[name].bundle.css"
 });
 
-const commonsChunk = new webpack.optimize.CommonsChunkPlugin({
-    name: "common",
-    filename: "dist/common.js",
-    minChunks: 2
-});
-
 module.exports = {
     entry: {
         main: "./src/homepage/index.tsx",
@@ -49,5 +43,5 @@ module.exports = {
         ]
     },
 
-    plugins: [extractLess, commonsChunk]
+    plugins: [extractLess]
 };

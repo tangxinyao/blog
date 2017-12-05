@@ -3,10 +3,10 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import { LoadingView } from '../parts/loading';
-import { ArticleView } from './parts/article';
-import { FooterView } from './parts/footer';
-import { HeaderView } from './parts/header';
+import { ProgressView } from '../components/progress';
+import { ArticleView } from './components/article';
+import { FooterView } from './components/footer';
+import { HeaderView } from './components/header';
 import { rootReducer } from './reducers';
 
 const store = createStore(rootReducer);
@@ -15,7 +15,7 @@ function HomePageView() {
     return (
         <Provider store={store}>
             <div style={{ height: '100%', width: '100%' }}>
-                <LoadingView />
+                <ProgressView />
                 <HeaderView />
                 <ArticleView />
                 <FooterView />

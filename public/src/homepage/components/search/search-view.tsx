@@ -18,11 +18,11 @@ function SearchView(props: ISearchProps) {
     </div>;
 }
 
-const mapState = (state: any) => {
+function mapState(state: any) {
     return { search: state.search };
-};
+}
 
-const mapDispatch = (dispatch: Dispatch<Action<string>>, ownProps: ISearchProps) => {
+function mapDispatch(dispatch: Dispatch<Action<string>>, ownProps: ISearchProps) {
     return {
         onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch(updateAction(event.target.value));
@@ -31,6 +31,6 @@ const mapDispatch = (dispatch: Dispatch<Action<string>>, ownProps: ISearchProps)
             dispatch(transportAction());
         }
     };
-};
+}
 
 export const Search = connect(mapState, mapDispatch)(SearchView);
