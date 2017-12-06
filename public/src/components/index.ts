@@ -1,1 +1,0 @@
-export { CubeView } from './cube';

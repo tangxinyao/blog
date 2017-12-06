@@ -3,8 +3,7 @@ const path = require("path");
 module.exports = {
     entry: {
         main: "./src/homepage/index.tsx",
-        dashboard: "./src/dashboard/index.tsx",
-        passport: "./src/passport/index.tsx"
+        dashboard: "./src/dashboard/index.tsx"
     },
     output: {
         path: __dirname,
@@ -15,6 +14,7 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
+        modules: [path.resolve(__dirname, "./src"), "node_modules"],
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
@@ -35,6 +35,7 @@ module.exports = {
     devServer: {
         contentBase: __dirname,
         compress: true,
+        historyApiFallback: true,
         proxy: {
             "/api": "http://localhost:3000"
         }

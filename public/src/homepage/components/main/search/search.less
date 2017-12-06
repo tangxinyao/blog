@@ -1,0 +1,36 @@
+@import '~styles/variables.less';
+
+.search {
+    float: right;
+    height: 2rem;
+    margin: 1rem;
+    .search-btn {
+        color: @primary;
+        cursor: pointer;
+        background-color: #fff;
+        border: solid 0.25rem @primary;
+        border-left: 0;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        box-sizing: border-box;
+        float: left;
+        height: 2rem;
+        padding: 0.25rem 0.5rem;
+    }
+    .search-ipt {
+        background-color: #fff;
+        border: solid 0.25rem @primary;
+        border-right: 0;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        box-sizing: border-box;
+        color: @primary;
+        float: left;
+        font-weight: bold;
+        height: 2rem;
+        outline: none;
+        padding: 0.5rem;
+        transition: width 0.3s;
+        width: 9rem;
+    }
+}
