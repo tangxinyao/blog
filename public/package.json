@@ -30,6 +30,8 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "@types/draft-js": "^0.10.19",
+    "draft-js": "^0.10.4",
     "immutable": "^3.8.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

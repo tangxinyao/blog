@@ -1,2 +1,1 @@
-export { Login } from './login-view';
-export { Signup } from './signup-view';
+export { Pannel } from './pannel-view';
