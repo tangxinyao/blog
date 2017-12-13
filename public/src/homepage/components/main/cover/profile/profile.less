@@ -38,5 +38,65 @@
 }
 
 .profile-img {
+    position: relative;
     width: 50%;
+}
+
+@keyframes profile-ripple-left-animate {
+    0% {
+        background-color: @primary;
+        border: solid 2px @primary;
+        width: 1rem;
+        height: 1rem;
+        left: 2.5rem;
+        bottom: 2.5rem;
+    }
+    25% {
+        background-color: transparent;
+    }
+    50% {
+        width:2rem;
+        height:2rem;
+        left: 2rem;
+        bottom: 2rem;
+    }
+    75% {
+        border: solid 2px transparent;
+    }
+}
+
+.profile-ripple-left {
+    position: absolute;
+    animation: profile-ripple-left-animate 2s infinite;
+    border-radius: 50%;
+}
+
+@keyframes profile-ripple-right-animate {
+    0% {
+        background-color: @primary;
+        border: solid 2px @primary;
+        width: 1rem;
+        height: 1rem;
+        right: 2.5rem;
+        top: 2.5rem;
+    }
+    25% {
+        background-color: transparent;
+    }
+    50% {
+        width:2rem;
+        height:2rem;
+        right: 2rem;
+        top: 2rem;
+    }
+    75% {
+        border: solid 2px transparent;
+    }
+}
+
+.profile-ripple-right {
+    position: absolute;
+    animation: profile-ripple-right-animate 2s infinite;
+    animation-delay: 0.5s;
+    border-radius: 50%;
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { CanvasView } from '../canvas';
 import profileImg = require('images/profile.jpg');
 
 export function ProfileView() {
@@ -14,6 +15,7 @@ export function ProfileView() {
             <div className="profile-content">I'M ALREADY GAINING EXPRIENCE</div>
         </div>
         <div className="profile-img">
+            <CanvasView />
             <img style={{ width: '100%' }} src={profileImg} />
         </div>
     </div>;

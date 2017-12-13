@@ -4,8 +4,6 @@ import { FooterView } from '../parts/footer';
 import { HeaderView } from '../parts/header';
 import { Search } from './search';
 
-import './main.less';
-
 import { CoverView } from './cover';
 
 export function MainView() {
