@@ -1,12 +1,15 @@
 @import '~styles/variables.less';
 .passport-pannel {
     background-color: white;
-    border: 0.25rem solid @primary;
     color: @usual;
-    margin: auto;
-    margin-top: 6rem;
-    width: 30rem;
     height: 20rem;
+    margin: auto;
+    width: 100%;
+    @media (min-width: 768px) {
+        border: 0.25rem solid @primary;
+        margin-top: 6rem;
+        width: 30rem;
+    }
 }
 
 .passport-header {

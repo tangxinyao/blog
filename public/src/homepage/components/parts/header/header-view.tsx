@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
+
+import { Search } from '../../main/search';
 
 import logoShadow = require('images/logo-shadow.png');
 import logo = require('images/logo.png');
-
-import { Search } from '../../main/search';
-import { Link } from 'react-router-dom';
 
 export function HeaderView(props: { children?: React.ReactNode }) {
     return <header>

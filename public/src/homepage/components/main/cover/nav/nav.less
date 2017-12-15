@@ -1,0 +1,58 @@
+@import '~styles/variables.less';
+.nav {
+    display: flex;
+    width: 100%;
+    margin: 4rem 0;
+    justify-content: space-between;
+}
+
+.nav-link {
+    background-color: white;
+    border: solid 2px @light;
+    flex: none;
+    position: relative;
+    width: 25%;
+    .nav-img-back {
+        display: none;
+    }
+    &:hover {
+        box-shadow: 0 0 1rem @light;
+        .nav-text {
+            color: @usual;
+        }
+        .nav-img-front {
+            display: none;
+        }
+        .nav-img-back {
+            display: inline-block;
+        }
+    }
+}
+
+.nav-text {
+    bottom: 0.5rem;
+    color: @light;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 0.5rem;
+    @media (min-width: 768px) {
+        bottom: 1rem;
+        font-size: 1.5rem;
+        right: 1rem;
+    }
+}
+
+.nav-img {
+    width: 100%;
+    animation: fadeInAnimate 0.3s;
+}
+
+@keyframes fadeInAnimate {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

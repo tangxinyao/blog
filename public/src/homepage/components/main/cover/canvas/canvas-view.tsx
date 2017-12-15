@@ -14,6 +14,10 @@ export class CanvasView extends React.Component<any, any> {
         this.lastRecord = 0;
     }
 
+    public shouldComponentUpdate() {
+        return false;
+    }
+
     public componentDidMount() {
         this.ctx = this.dom.getContext('2d');
         this.animationFrame = requestAnimationFrame(this.animate);

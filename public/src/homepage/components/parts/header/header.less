@@ -1,16 +1,15 @@
 @import "~styles/variables.less";
-
 header {
     height: 4rem;
     width: 100%;
     background-image: url(~images/bg.png);
     background-repeat: repeat;
     .banner {
+        cursor: pointer;
         float: left;
+        font-weight: bold;
         height: 2rem;
         margin: 1rem;
-        cursor: pointer;
-        font-weight: bold;
         &:hover {
             .logo {
                 transform: translateY(-2rem)
@@ -32,12 +31,14 @@ header {
     }
     .title {
         color: @primary;
-        display: inline-block;
+        display: none;
         font-size: 1.5rem;
         font-weight: bold;
         padding: 0.25rem 1rem;
         text-shadow: -2px 0 @shadow, 2px 0 @shadow, 0 -2px @shadow, 0 2px @shadow;
         vertical-align: middle;
+        @media (min-width: 768px) {
+            display: inline-block;
+        }
     }
-    
 }

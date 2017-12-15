@@ -1,8 +1,28 @@
 @import "~styles/variables.less";
-
 footer {
     font-weight: bold;
-    height: 6rem;
+    height: 4rem;
     letter-spacing: 1px;
+    text-align: center;
+    user-select: none;
     width: 100%;
+    .contact {
+        color: @usual;
+        display: inline-block;
+        font-weight: bold;
+        line-height: 1.5;
+        margin: 1rem;
+    }
+    a {
+        color: @usual;
+        cursor: pointer;
+        &:hover {
+            color: @light;
+        }
+    }
+    span {
+        display: inline-block;
+        margin: 0 0.25rem;
+        text-decoration: none;
+    }
 }

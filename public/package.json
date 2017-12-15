@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "My personal blog",
   "main": "webpack.config.js",
+  "author": "tang xinyao",
+  "license": "MIT",
   "scripts": {
     "build": "webpack -p --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "lint": "tslint -c ../tslint.json 'src/**/*.ts'"
   },
   "devDependencies": {
     "@types/draft-js": "^0.10.19",
@@ -21,7 +23,7 @@
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
-    "less": "^3.0.0-alpha.3",
+    "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.19.0",
