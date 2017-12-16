@@ -1,19 +1,28 @@
-
 .container {
     width: 100%;
     padding: 1rem;
     margin: auto;
     box-sizing: border-box;
-  }
-  
-  @media (min-width: 768px) {
+}
+
+.container-sm {
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
     .container {
-      max-width: 720px;
+        max-width: 720px;
     }
-  }
-  
-  @media (min-width: 1200px) {
+    .container-sm {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1200px) {
     .container {
-      max-width: 1140px;
+        max-width: 1140px;
     }
-  }
+}

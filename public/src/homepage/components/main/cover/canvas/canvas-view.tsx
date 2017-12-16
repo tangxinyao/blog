@@ -35,7 +35,7 @@ export class CanvasView extends React.Component<any, any> {
         this.dom = dom;
     }
 
-    private animate = (time: number) => {
+    private animate = () => {
         this.ctx.clearRect(0, 0, 500, 500);
 
         const circles = [];

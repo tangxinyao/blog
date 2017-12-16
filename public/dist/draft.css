@@ -1,0 +1,52 @@
+/**
+ * Draft v0.11.0-alpha
+ *
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+.DraftEditor-editorContainer,
+.DraftEditor-root,
+.public-DraftEditor-content {
+    height: inherit;
+    text-align: initial
+}
+
+.DraftEditor-root {
+    position: relative;
+    margin: 1rem;
+    color: #666;
+    letter-spacing: 1px;
+    min-height: 24rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.DraftEditor-editorContainer {
+    position: relative;
+    z-index: 1
+}
+
+.public-DraftEditor-block {
+    position: relative
+}
+
+.public-DraftEditorPlaceholder-root {
+    color: #666;
+    font-size: 1rem;
+    position: absolute;
+    z-index: 1
+}
+
+.DraftEditorPlaceholder-hidden {
+    display: none
+}
+
+.public-DraftStyleDefault-block {
+    position: relative;
+    white-space: pre-wrap
+}

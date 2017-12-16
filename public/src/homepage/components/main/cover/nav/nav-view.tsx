@@ -16,14 +16,6 @@ export class NavView extends React.Component {
         this.state = { active: -1 };
     }
 
-    public handleMouseOver = (index: number) => () => {
-        this.setState({ active: index });
-    }
-
-    public handleMouseOut = (index: number) => () => {
-        this.setState({ active: -1 });
-    }
-
     public render() {
         return <div className="nav">
             <Link className="nav-link" to="/passport">

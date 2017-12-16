@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { Dispatch, Reducer } from 'redux';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 import { Action } from 'redux-actions';
 
 import { transportAction, updateAction } from '../../../actions/search';
@@ -22,12 +22,12 @@ function mapState(state: any) {
     return { search: state.search };
 }
 
-function mapDispatch(dispatch: Dispatch<Action<string>>, ownProps: ISearchProps) {
+function mapDispatch(dispatch: Dispatch<Action<string>>) {
     return {
         onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch(updateAction(event.target.value));
         },
-        onSearch: (event: React.MouseEvent<HTMLSpanElement>) => {
+        onSearch: () => {
             dispatch(transportAction());
         }
     };
