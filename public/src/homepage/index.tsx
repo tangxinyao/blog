@@ -2,15 +2,16 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 
 import { MainView } from './components/main';
 import { ProgressView } from './components/parts/progress/progress-view';
 import { PassportView } from './components/passport';
 import { WriteView } from './components/write';
+import { epicMiddleware } from './epics';
 import { rootReducer } from './reducers';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
 function HomePageView() {
     return (

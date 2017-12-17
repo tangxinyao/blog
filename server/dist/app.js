@@ -1,19 +1,15 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const Koa = require("koa");
-const app = new Koa();
+const bodyParser = require("koa-bodyparser");
 const Router = require("koa-router");
+const routes_1 = require("./routes");
+const db_1 = require("./utils/db");
+db_1.connectDB('mongodb://localhost/blog', { useMongoClient: true });
+const app = new Koa();
 const router = new Router();
-router.get('/api/search', (ctx) => __awaiter(this, void 0, void 0, function* () {
-    ctx.body = 'ok';
-}));
+router.prefix('/api');
+router.use('/token', routes_1.tokenRouter.routes(), routes_1.tokenRouter.allowedMethods());
+app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods());
 app.listen(3000);

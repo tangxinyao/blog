@@ -1,0 +1,5 @@
+export const RETRIEVE_ALBUMS = 'RETRIEVE_ALBUMS';
+export const SUBMIT_WRITE = 'SUBMIT_WRITE';
+export const UPDATE_ALBUM = 'UPDATE_ALBUM';
+export const UPDATE_TITLE = 'UPDATE_TITLE';
+export const UPDATE_EDITOR = 'UPDATE_EDITOR';

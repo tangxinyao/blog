@@ -4,11 +4,13 @@ import { Dispatch } from 'redux';
 import { Action } from 'redux-actions';
 
 import { transportLogin, updatePassword, updateUsername } from '../../../actions/login';
+import { LoginStatus } from '../../../reducers/login';
 
 interface IPannelProps {
     login: {
         username: string,
-        password: string
+        password: string,
+        status: LoginStatus
     };
     onChange: React.ChangeEventHandler<any>;
     onConfirm: React.MouseEventHandler<HTMLButtonElement>;
@@ -32,7 +34,9 @@ function PannelView(props: IPannelProps) {
         </div>
         <input className="passport-ipt" name="username" type="text" value={props.login.username} />
         <input className="passport-ipt" name="password" type="password" value={props.login.password} />
-        <button className="passport-btn" onClick={props.onConfirm}>Log in</button>
+        <button className="passport-btn" onClick={props.onConfirm}>
+            {props.login.status === LoginStatus.Pending ? 'Loading' : 'Log in'}
+        </button>
     </div>;
 }
 
@@ -45,14 +49,13 @@ function mapDispatch(dispatch: Dispatch<Action<{ username: string, password: str
         onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
             switch (event.target.name) {
                 case 'username':
-                    dispatch(updatePassword({ password: event.target.value }));
+                    dispatch(updateUsername({ username: event.target.value }));
                     break;
                 case 'password':
-                    dispatch(updateUsername({ username: event.target.value }));
+                    dispatch(updatePassword({ password: event.target.value }));
             }
         },
         onConfirm: () => {
-            console.log('yes');
             dispatch(transportLogin());
         }
     };
