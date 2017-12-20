@@ -1,47 +1,48 @@
-@import "~/styles/variables.less";
-
-footer {
-    .cube-container {
-        cursor: pointer;
-        float: right;
-        height: 2rem;
-        margin: 2rem;
-        perspective: 200px;
-        position: relative;
-        width: 12rem;
-        &:hover {
-            .cube-box {
-                transform: translateY(-1rem) translateZ(-1rem) rotateX(90deg);
-            }
-        }
-
+@import "~styles/variables.less";
+.cube-container {
+    cursor: pointer;
+    height: 3rem;
+    margin: 2rem auto;
+    perspective: 200px;
+    position: relative;
+    width: 16rem;
+    &:hover {
         .cube-box {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.3s;
-
-            .cube {
-                box-sizing: border-box;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                text-align: center;
-            }
-            .cube-front {
-                border: solid 0.25rem @primary;
-                color: @primary;
-                padding: 0.25rem;
-                transform: rotateX(0deg);
-            }
-            .cube-back {
-                background-color: @primary;
-                color: #fff;
-                padding: 0.5rem;
-                transform: rotateX(-90deg) translateZ(2rem);
-                transform-origin: 0 0;
-            }
+            transform: translateY(-1.5rem) translateZ(-1.5rem) rotateX(90deg);
         }
     }
+}
+
+.cube-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.cube {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.cube-front {
+    background-color: white;
+    border: solid 2px @primary;
+    color: @primary;
+    padding: 1rem;
+    transform: rotateX(0deg);
+}
+
+.cube-back {
+    background-color: @primary;
+    color: #fff;
+    padding: 1rem;
+    transform: rotateX(-90deg) translateZ(3rem);
+    transform-origin: 0 0;
 }

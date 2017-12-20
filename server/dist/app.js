@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Koa = require("koa");
 const bodyParser = require("koa-bodyparser");
+const jwt = require("koa-jwt");
 const Router = require("koa-router");
+const constant_1 = require("./config/constant");
 const routes_1 = require("./routes");
 const db_1 = require("./utils/db");
 db_1.connectDB('mongodb://localhost/blog', { useMongoClient: true });
@@ -10,6 +12,8 @@ const app = new Koa();
 const router = new Router();
 router.prefix('/api');
 router.use('/token', routes_1.tokenRouter.routes(), routes_1.tokenRouter.allowedMethods());
+router.use('/post', routes_1.postRouter.routes(), routes_1.postRouter.allowedMethods());
 app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods());
+app.use(jwt({ secret: constant_1.SECRET_KEY }).unless({ path: [/^\/api\/token/] }));
 app.listen(3000);

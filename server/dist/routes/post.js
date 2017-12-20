@@ -8,18 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const jwt = require("jsonwebtoken");
 const Router = require("koa-router");
-const constant_1 = require("../config/constant");
-const user_1 = require("../models/user");
-exports.tokenRouter = new Router();
-exports.tokenRouter.post('/', (ctx, next) => __awaiter(this, void 0, void 0, function* () {
-    const users = yield user_1.User.find(ctx.request.body);
-    if (users.length === 0) {
-        ctx.status = 404;
-        return next();
-    }
-    const token = jwt.sign({ username: users[0].username }, constant_1.SECRET_KEY, { expiresIn: 3600 });
-    ctx.body = { token };
+exports.postRouter = new Router();
+exports.postRouter.post('/', (ctx, next) => __awaiter(this, void 0, void 0, function* () {
+    console.log(ctx.request.body);
+    return next();
+}));
+exports.postRouter.get('/', (ctx, next) => __awaiter(this, void 0, void 0, function* () {
+    console.log(ctx.params);
     return next();
 }));

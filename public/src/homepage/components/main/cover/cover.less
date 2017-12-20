@@ -1,0 +1,18 @@
+@import '~styles/variables.less';
+.cover {
+    min-height: calc(100% - 8rem);
+    user-select: none;
+    width: 100%;
+}
+
+.cover-header {
+    color: @dark;
+    font-size: 1.5rem;
+    font-weight: bold;
+    @media screen and (min-width: 768px) {
+        font-size: 2rem;
+    }
+    @media screen and (min-width: 1200px) {
+        font-size: 3rem;
+    }
+}

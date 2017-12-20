@@ -1,22 +1,14 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export function CardView() {
     return <div className="card">
-        <div className="card-aside" style={{ backgroundImage: 'url(https://unsplash.it/500/400?random)' }}>
-        </div>
-        <div className="card-content">
-            <h1 className="card-h1">Stop All The Clocks</h1>
-            <div>一个人乐得清静，二个人却也不错。走在路上也许经常想到彼此，也许想到彼此仅此而已。</div>
-        </div>
-        <div className="card-appendix">
-            <a className="card-appendix-row" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fshaytang.party&title=Just%20an%20interesting%20blog" target="_blank">
-                <span className="fa fa-share-square"></span>
-                <span>BE SHARED BY 2</span>
-            </a>
-            <a className="card-appendix-row">
-                <span className="fa fa-heart"></span>
-                <span>BE LIKED BY 1</span>
-            </a>
-        </div>
+        {/* <div className="card-aside" style={{ backgroundImage: 'url(https://unsplash.it/500/400?random)' }}>
+        </div> */}
+        <Link to="/"><h1 className="card-h1">Stop All The Clocks</h1></Link>
+        <div className="card-time">December 18th , 2017</div>
+        <div>有时会陷入无话可说的难堪境地。张了张嘴，却像水里的鱼，什么都讲不出口。亦或者，明明又数不清的理由，但话到嘴边，唯有最无力的一句，对不起。真的是对不起。</div>
+        <Link to="/"><button className="card-btn">Read more</button></Link>
+        <div style={{ fontWeight: 'bold' }}><span>File under </span><Link className="card-link" to="/">Diary</Link><Link className="card-link" to="/">Love Story</Link></div>
     </div>;
 }

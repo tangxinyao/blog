@@ -7,7 +7,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { MainView } from './components/main';
 import { ProgressView } from './components/parts/progress/progress-view';
 import { PassportView } from './components/passport';
-import { WriteView } from './components/write';
+import { Write } from './components/write';
 import { epicMiddleware } from './epics';
 import { rootReducer } from './reducers';
 
@@ -21,7 +21,7 @@ function HomePageView() {
                     <ProgressView />
                     <Route exact path="/" component={MainView} />
                     <Route path="/passport" component={PassportView} />
-                    <Route path="/write" component={WriteView} />
+                    <Route path="/write" component={Write} />
                 </div>
             </Router>
         </Provider>

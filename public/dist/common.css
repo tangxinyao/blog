@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.container-sm {
+.small-container {
     width: 100%;
     padding: 1rem;
     margin: auto;
@@ -16,7 +16,7 @@
     .container {
         max-width: 720px;
     }
-    .container-sm {
+    .small-container {
         max-width: 720px;
     }
 }

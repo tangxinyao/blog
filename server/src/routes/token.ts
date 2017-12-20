@@ -13,6 +13,6 @@ tokenRouter.post('/', async (ctx, next) => {
         return next();
     }
     const token = jwt.sign({ username: users[0].username }, SECRET_KEY, { expiresIn: 3600 });
-    ctx.body = { jwt: token };
+    ctx.body = { token };
     return next();
 });

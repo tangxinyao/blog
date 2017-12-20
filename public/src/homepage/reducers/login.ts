@@ -1,4 +1,3 @@
-import { fromJS } from 'immutable';
 import { Action } from 'redux-actions';
 
 import { LOGIN_FAILURE, LOGIN_SUCCESS, TRANSPORT_LOGIN, UPDATE_PASSWORD, UPDATE_USERNAME } from '../constants/login';
@@ -10,22 +9,22 @@ export enum LoginStatus {
     Success
 }
 
-export function loginReducer(state = fromJS({ password: '', status: LoginStatus.Initial, username: '' }), action: Action<any>) {
+export function loginReducer(state = { password: '', status: LoginStatus.Initial, username: '' }, action: Action<any>) {
     switch (action.type) {
         case UPDATE_PASSWORD:
-            return state.mergeDeep({ password: action.payload.password });
+            return Object.assign({}, state, { password: action.payload.password });
 
         case UPDATE_USERNAME:
-            return state.mergeDeep({ username: action.payload.username });
+            return Object.assign({}, state, { username: action.payload.username });
 
         case TRANSPORT_LOGIN:
-            return state.mergeDeep({ status: LoginStatus.Pending });
+            return Object.assign({}, state, { status: LoginStatus.Pending });
 
         case LOGIN_SUCCESS:
-            return state.mergeDeep({ status: LoginStatus.Success });
+            return Object.assign({}, state, { status: LoginStatus.Failure });
 
         case LOGIN_FAILURE:
-            return state.mergeDeep({ status: LoginStatus.Failure });
+            return Object.assign({}, state, { status: LoginStatus.Failure });
 
         default:
             return state;

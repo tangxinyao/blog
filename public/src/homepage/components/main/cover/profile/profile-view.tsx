@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { CanvasView } from '../canvas';
-import profileImg = require('images/profile.jpg');
+import profileImg = require('images/profile.png');
 
 export function ProfileView() {
     return <div className="profile">
