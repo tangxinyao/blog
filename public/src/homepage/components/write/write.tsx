@@ -1,4 +1,4 @@
-import { Editor, EditorState } from 'draft-js';
+import { ContentBlock, Editor, EditorState } from 'draft-js';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
@@ -7,6 +7,14 @@ import { Action } from 'redux-actions';
 import { updateAlbum, updateEditorState, updateTitle } from '../../actions/write';
 import { FooterView } from '../parts/footer';
 import { HeaderView } from '../parts/header';
+import { Topbar } from './topbar/topbar';
+
+function getBlockStyle(block: ContentBlock) {
+    switch (block.getType()) {
+        case 'blockquote':
+            return 'public-DraftStyleDefault-blockquote';
+    }
+}
 
 interface IWriteProps {
     write: {
@@ -29,7 +37,9 @@ class WriteView extends React.Component<IWriteProps> {
                 <div className="small-container">
                     <input className="article-title" placeholder="Title" type="text"
                         onChange={handleTitleChange} value={write.title} />
+                    <Topbar />
                     <Editor
+                        blockStyleFn={getBlockStyle}
                         editorState={write.editorState}
                         onChange={handleEditorStateChange}
                         placeholder="Please enter the text" />;

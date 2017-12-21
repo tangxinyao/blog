@@ -39,6 +39,7 @@
 .public-DraftEditorPlaceholder-root {
     color: #666;
     font-size: 1rem;
+    line-height: 2;
     position: absolute;
     z-index: 1
 }
@@ -50,4 +51,36 @@
 .public-DraftStyleDefault-block {
     position: relative;
     white-space: pre-wrap
+}
+
+.public-DraftStyleDefault-depth0.public-DraftStyleDefault-listLTR {
+    margin-left: 1.5rem
+}
+
+.public-DraftStyleDefault-depth0.public-DraftStyleDefault-listRTL {
+    margin-right: 1.5rem
+}
+
+.public-DraftStyleDefault-depth1.public-DraftStyleDefault-listLTR {
+    margin-left: 3rem
+}
+
+.public-DraftStyleDefault-depth1.public-DraftStyleDefault-listRTL {
+    margin-right: 3rem
+}
+
+.public-DraftStyleDefault-unorderedListItem {
+    list-style-type: disc;
+    position: relative
+}
+
+.public-DraftStyleDefault-orderedListItem {
+    list-style-type: decimal;
+    position: relative
+}
+
+.public-DraftStyleDefault-blockquote {
+    color: #999;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }

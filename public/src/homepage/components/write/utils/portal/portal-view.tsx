@@ -18,10 +18,10 @@ class MentionPortalView extends React.Component<any, any> {
         this.props.handleMentionSearchStart(this.props.decoratedText);
     }
 
-    public componentWillReceiveProps(nextProps: any) {
-        this.updatePortalClientRect(nextProps);
-        this.props.handleMentionSearchChange(nextProps.decoratedText);
-    }
+    // public componentWillReceiveProps(nextProps: any) {
+    //     this.updatePortalClientRect(nextProps);
+    //     this.props.handleMentionSearchChange(nextProps.decoratedText);
+    // }
 
     public componentWillUnmount() {
         mentionStore.searches = mentionStore.searches.delete(this.props.offsetKey);
