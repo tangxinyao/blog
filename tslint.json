@@ -5,12 +5,13 @@
     ],
     "jsRules": {},
     "rules": {
+        "no-bitwise": false,
+        "no-console": [
+            false
+        ],
         "max-line-length": [
             true,
             240
-        ],
-        "no-console": [
-            false
         ],
         "quotemark": [
             true,

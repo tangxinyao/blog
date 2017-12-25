@@ -1,6 +1,7 @@
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import { loginEpic } from './login';
+import { transportLoginEpic } from './login';
+import { uploadEditorImageEpic } from './write';
 
-const rootEpic = combineEpics(loginEpic);
+const rootEpic = combineEpics(transportLoginEpic, uploadEditorImageEpic);
 
 export const epicMiddleware = createEpicMiddleware(rootEpic);

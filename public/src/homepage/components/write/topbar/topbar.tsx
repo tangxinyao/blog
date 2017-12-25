@@ -6,6 +6,7 @@ import { Action } from 'redux-actions';
 
 import { toggleBlockType, toggleInlineStyle } from '../../../actions/write';
 import { CommonButton } from './button/common';
+import { ImageButton } from './button/image';
 
 const INLINE_STYLES = [
     { className: 'fa fa-bold', style: 'BOLD' },
@@ -39,6 +40,7 @@ function TopbarView(props: ITopbarProps) {
             BLOCK_TYPES.map((blockType, index) => <CommonButton key={index} className={blockType.className}
                 active={blockType.style === currentBlockType} style={blockType.style} onToggle={props.toggleBlockType} />)
         }
+        <ImageButton />
     </div>;
 }
 
@@ -49,11 +51,9 @@ function mapState(state: any) {
 function mapDispatch(dispatch: Dispatch<Action<{ album: string, albums: string[], blockType: string, editorState: EditorState, inlineStyle: string, mentionSearch: string, title: string }>>) {
     return {
         toggleBlockType: (blockType: string) => {
-            console.log(toggleBlockType({ blockType }));
             dispatch(toggleBlockType({ blockType }));
         },
         toggleInlineStyle: (inlineStyle: string) => {
-            console.log(toggleInlineStyle({ inlineStyle }));
             dispatch(toggleInlineStyle({ inlineStyle }));
         }
     };

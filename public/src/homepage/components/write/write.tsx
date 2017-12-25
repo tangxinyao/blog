@@ -8,6 +8,7 @@ import { updateAlbum, updateEditorState, updateTitle } from '../../actions/write
 import { FooterView } from '../parts/footer';
 import { HeaderView } from '../parts/header';
 import { Topbar } from './topbar/topbar';
+import { ImageBlock } from './utils/block';
 
 function getBlockStyle(block: ContentBlock) {
     switch (block.getType()) {
@@ -15,6 +16,19 @@ function getBlockStyle(block: ContentBlock) {
             return 'public-DraftStyleDefault-blockquote';
     }
 }
+
+const blockRenderer = (editorState: EditorState) => (contentBlock: ContentBlock) => {
+    if (contentBlock.getType() !== 'atomic') {
+        return null;
+    }
+    const entity = editorState.getCurrentContent().getEntity(contentBlock.getEntityAt(0));
+    if (entity.getType() === 'IMAGE') {
+        return {
+            component: ImageBlock,
+            editable: false
+        };
+    }
+};
 
 interface IWriteProps {
     write: {
@@ -40,9 +54,10 @@ class WriteView extends React.Component<IWriteProps> {
                     <Topbar />
                     <Editor
                         blockStyleFn={getBlockStyle}
+                        blockRendererFn={blockRenderer(write.editorState)}
                         editorState={write.editorState}
                         onChange={handleEditorStateChange}
-                        placeholder="Please enter the text" />;
+                        placeholder="Please enter the text" />
                     <div className="article-category">
                         <input className="article-category-ipt" placeholder="Album" type="text"
                             onChange={handleAlbumInput} value={write.album} />

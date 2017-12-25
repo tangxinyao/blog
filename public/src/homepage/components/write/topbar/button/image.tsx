@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { uploadEditorImageFile } from '../../../../actions/write';
 
-export class ImageButton extends React.Component {
+export class ImageButtonView extends React.Component<{ uploadImage: (file: File) => void }> {
     public render() {
-        return <span style={{ color: '#999', cursor: 'pointer', display: 'inline-block', padding: '0 0.5rem' }}
+        return <span style={{ color: '#999', cursor: 'pointer', display: 'inline-block', padding: '0 1rem' }}
             className="fa fa-file-image-o" onClick={this.handleClick}></span>;
     }
 
@@ -15,7 +18,16 @@ export class ImageButton extends React.Component {
     }
 
     private handelChange = (e: any) => {
-        const file = e.target.files[0];
-        console.log(file);
+        this.props.uploadImage(e.target.files[0]);
     }
 }
+
+function mapDispatch(dispatch: Dispatch<any>) {
+    return {
+        uploadImage: (file: File) => {
+            dispatch(uploadEditorImageFile({ imageFile: file }));
+        }
+    };
+}
+
+export const ImageButton = connect(null, mapDispatch)(ImageButtonView);
