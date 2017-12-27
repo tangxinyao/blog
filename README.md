@@ -14,4 +14,4 @@ Have fun!
 
 ## Presentation
 
-[Shay tang's blog](https://shaytang.party)
+[Shay tang's blog](https://www.tangxinyao.cn)
