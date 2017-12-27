@@ -1,10 +1,13 @@
 import { ContentBlock, Editor, EditorState } from 'draft-js';
+import * as Immutable from 'immutable';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { Action } from 'redux-actions';
 
-import { updateAlbum, updateEditorState, updateTitle } from '../../actions/write';
+import { addAlbum, removeAlbum, retrieveAlbums, selectAlbum, submitWrite, updateAlbum, updateEditorState, updateTitle } from '../../actions/write';
+import { IWriterAction } from '../../reducers/write';
+import { Album, AlbumView } from '../parts/album';
 import { FooterView } from '../parts/footer';
 import { HeaderView } from '../parts/header';
 import { Topbar } from './topbar/topbar';
@@ -32,19 +35,30 @@ const blockRenderer = (editorState: EditorState) => (contentBlock: ContentBlock)
 
 interface IWriteProps {
     write: {
-        album: string;
-        albums: string[];
+        album: Album;
+        albums: Immutable.Map<string, Album>;
         editorState: EditorState;
         title: string;
     };
-    handleTitleChange: React.ChangeEventHandler<HTMLInputElement>;
-    handleEditorStateChange: (editorState: EditorState) => void;
+    handleAlbumAdd: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     handleAlbumInput: React.ChangeEventHandler<HTMLInputElement>;
+    handleAlbumRemove: (id: string) => (e: React.MouseEvent<HTMLElement>) => void;
+    handleAlbumsRetireve: () => void;
+    handleAlbumSelect: (id: string) => () => void;
+    handleEditorStateChange: (editorState: EditorState) => void;
+    handleSubmit: () => void;
+    handleTitleChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 class WriteView extends React.Component<IWriteProps> {
+
+    public componentDidMount() {
+        this.props.handleAlbumsRetireve();
+    }
+
     public render() {
-        const { handleAlbumInput, handleEditorStateChange, handleTitleChange, write } = this.props;
+        const { handleAlbumAdd, handleAlbumInput, handleAlbumRemove, handleAlbumSelect,
+            handleEditorStateChange, handleSubmit, handleTitleChange, write } = this.props;
         return <div style={{ width: '100%', height: '100%' }}>
             <HeaderView />
             <div style={{ minHeight: 'calc(100% - 8rem)', userSelect: 'none' }}>
@@ -59,13 +73,14 @@ class WriteView extends React.Component<IWriteProps> {
                         onChange={handleEditorStateChange}
                         placeholder="Please enter the text" />
                     <div className="article-category">
-                        <input className="article-category-ipt" placeholder="Album" type="text"
-                            onChange={handleAlbumInput} value={write.album} />
+                        <input className="article-category-ipt" placeholder="Album" type="text" onKeyUp={handleAlbumAdd}
+                            onChange={handleAlbumInput} value={write.album.content} />
                         <div>
-                            <span className="article-category-label article-category-active">Computer Science</span>
-                            <span className="article-category-label">Art</span>
-                            <span className="article-category-label">Artifact Intelligence</span>
+                            {write.albums.toArray().map((album: Album) => <AlbumView key={album.id} album={album} onAlbumRemove={handleAlbumRemove} onAlbumSelect={handleAlbumSelect} />)}
                         </div>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                        <button className="article-submit" onClick={handleSubmit}>Submit</button>
                     </div>
                 </div>
             </div>
@@ -78,13 +93,31 @@ function mapState(state: any) {
     return { write: state.write };
 }
 
-function mapDispatch(dispatch: Dispatch<Action<{ album: string, albums: string[], editor: EditorState, title: string }>>) {
+function mapDispatch(dispatch: Dispatch<Action<IWriterAction>>) {
     return {
+        handleAlbumAdd: (e: React.KeyboardEvent<HTMLInputElement>) => {
+            if (e.keyCode === 13) {
+                dispatch(addAlbum());
+            }
+        },
         handleAlbumInput: (event: React.ChangeEvent<HTMLInputElement>) => {
-            dispatch(updateAlbum({ album: event.target.value }));
+            dispatch(updateAlbum({ albumContent: event.target.value }));
+        },
+        handleAlbumRemove: (id: string) => (e: React.MouseEvent<HTMLElement>) => {
+            e.stopPropagation();
+            dispatch(removeAlbum({ albumId: id }));
+        },
+        handleAlbumSelect: (id: string) => () => {
+            dispatch(selectAlbum({ albumId: id }));
+        },
+        handleAlbumsRetireve: () => {
+            dispatch(retrieveAlbums());
         },
         handleEditorStateChange: (editorState: EditorState) => {
             dispatch(updateEditorState({ editorState }));
+        },
+        handleSubmit: () => {
+            dispatch(submitWrite());
         },
         handleTitleChange: (event: React.ChangeEvent<HTMLInputElement>) => {
             dispatch(updateTitle({ title: event.target.value }));

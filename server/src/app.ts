@@ -19,5 +19,5 @@ router.use('/post', postRouter.routes(), postRouter.allowedMethods());
 
 app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods());
-app.use(jwt({ secret: SECRET_KEY, passthrough: true }).unless({ path: [/^\/api\/token/] }));
+app.use(jwt({ secret: SECRET_KEY }).unless({ path: [/^\/api\/token/] }));
 app.listen(3000);

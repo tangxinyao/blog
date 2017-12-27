@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { uploadEditorImageFile } from '../../../../actions/write';
+import { uploadImage } from '../../../../actions/write';
 
 export class ImageButtonView extends React.Component<{ uploadImage: (file: File) => void }> {
     public render() {
@@ -25,7 +25,7 @@ export class ImageButtonView extends React.Component<{ uploadImage: (file: File)
 function mapDispatch(dispatch: Dispatch<any>) {
     return {
         uploadImage: (file: File) => {
-            dispatch(uploadEditorImageFile({ imageFile: file }));
+            dispatch(uploadImage({ image: file }));
         }
     };
 }

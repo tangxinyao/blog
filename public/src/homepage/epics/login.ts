@@ -1,12 +1,12 @@
 import { ActionsObservable } from 'redux-observable';
 import * as Rx from 'rxjs';
-import { TRANSPORT_LOGIN } from '../constants/login';
+import { LOGIN } from '../constants/login';
 
 import { loginFailure, loginSuccess } from '../actions/login';
 
-export function transportLoginEpic(action$: ActionsObservable<any>, store: any) {
-    return action$.ofType(TRANSPORT_LOGIN).mergeMap(() => {
-        const params = store.getState().login.toJS();
+export function loginEpic(action$: ActionsObservable<any>, store: any) {
+    return action$.ofType(LOGIN).mergeMap(() => {
+        const params = store.getState().login;
         return Rx.Observable.ajax.post('/api/token', { username: params.username, password: params.password })
             .map((data) => {
                 const token = data.response.token;

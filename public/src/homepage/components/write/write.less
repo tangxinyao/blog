@@ -19,27 +19,31 @@
             color: @usual;
             letter-spacing: 1px;
             margin: 1rem;
+            margin-bottom: 0.5rem;
             outline: none;
             padding: 0.5rem;
             font-size: 1rem;
             width: calc(~'100% - 3rem');
         }
-        &-label {
-            border: solid 2px @light;
-            border-radius: 1rem;
-            box-sizing: border-box;
-            color: @light;
-            cursor: pointer;
-            display: inline-block;
-            letter-spacing: 1px;
-            margin: 1rem;
-            min-width: 6rem;
-            padding: 0.5rem;
-            text-align: center;
-        }
-        &-active {
-            border: solid 2px @primary;
-            color: @primary;
+    }
+    &-submit {
+        background-color: @primary;
+        border: 0;
+        border-radius: 1rem;
+        box-shadow: 4px 4px 8px #eee;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin: auto;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        outline: none;
+        width: 16rem;
+        transition: transform 0.3s;
+        &:hover {
+            transform: translateY(-2px);
         }
     }
 }

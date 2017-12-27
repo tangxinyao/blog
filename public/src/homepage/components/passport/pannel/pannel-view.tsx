@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { Action } from 'redux-actions';
 
-import { transportLogin, updatePassword, updateUsername } from '../../../actions/login';
+import { login, updatePassword, updateUsername } from '../../../actions/login';
 import { LoginStatus } from '../../../reducers/login';
 
 interface IPannelProps {
@@ -56,7 +56,7 @@ function mapDispatch(dispatch: Dispatch<Action<{ username: string, password: str
             }
         },
         onConfirm: () => {
-            dispatch(transportLogin());
+            dispatch(login());
         }
     };
 }

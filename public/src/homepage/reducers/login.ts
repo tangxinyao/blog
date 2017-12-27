@@ -1,6 +1,6 @@
 import { Action } from 'redux-actions';
 
-import { LOGIN_FAILURE, LOGIN_SUCCESS, TRANSPORT_LOGIN, UPDATE_PASSWORD, UPDATE_USERNAME } from '../constants/login';
+import { LOGIN, LOGIN_FAILURE, LOGIN_SUCCESS, UPDATE_PASSWORD, UPDATE_USERNAME } from '../constants/login';
 
 export enum LoginStatus {
     Failure,
@@ -17,7 +17,7 @@ export function loginReducer(state = { password: '', status: LoginStatus.Initial
         case UPDATE_USERNAME:
             return Object.assign({}, state, { username: action.payload.username });
 
-        case TRANSPORT_LOGIN:
+        case LOGIN:
             return Object.assign({}, state, { status: LoginStatus.Pending });
 
         case LOGIN_SUCCESS:

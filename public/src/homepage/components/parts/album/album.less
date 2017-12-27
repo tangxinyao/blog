@@ -1,0 +1,25 @@
+@import '~styles/variables.less';
+.album {
+    border: solid 2px @lighter;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: @lighter;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    position: relative;
+    text-align: center;
+    &-active {
+        border: solid 2px @primary;
+        color: @primary;
+    }
+    &-remove {
+        background-color: white;
+        position: absolute;
+        right: -0.5rem;
+        top: -0.5rem;
+        z-index: 999;
+    }
+}

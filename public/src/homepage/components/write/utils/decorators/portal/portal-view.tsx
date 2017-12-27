@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { Action } from 'redux-actions';
 
-import { startMentionSearch, stopMentionSearch, updateMentionSearch } from '../../../../actions/write';
+import { startMentionSearch, stopMentionSearch, updateMentionSearch } from '../../../../../actions/write';
 import { mentionStore } from '../store';
 
 class MentionPortalView extends React.Component<any, any> {
